@@ -2,26 +2,32 @@
   "recipes": [
     {
       "id": "1",
-      "title": "Veggie Stew",
+      "title": "Haydari",
       "ingredients": [
-        "1 Carrot",
-        "1 Leek",
-        "200g Tofu",
-        "300ml Veg stock"
+        "5 tablespoons of strained yogurt (200 grams)",
+        "1 slice of white cheese (50 grams)",
+        "2 cloves of garlic (grated and crushed)",
+        "4 tablespoons of olive oil",
+        "1 teaspoon dried mint",
+        "4-5 sprigs of dill",
+        "salt"
       ],
-      "method": "1. Pre-heat the oven to 200C/3C/gas 5. Place the carrot, leek and tofu in a large bowl. Add the stock and mix well. 2. Add the rest of the ingredients and mix well. 3. Place the mixture in a large bowl and cover with a lid. 4. Place the lid on the oven and cook for 40 minutes. 5. Serve with a slaw of your choice",
-      "cookingTime": "45 minutes"
+      "method": "Crush the garlic into a puree. Mash the feta cheese with a fork. Finely chop the dill. Put all the ingredients in a mixing bowl.After mixing it well with the help of a spoon or whisk, transfer it to the serving plate. Share it coldly with your loved ones.",
+      "cookingTime": "12 minutes"
     },
     {
       "id": "2",
-      "title": "Veggie Pizza",
+      "title": "Humus",
       "ingredients": [
-        "1 Base",
-        "Tomata pasata",
-        "1 Green pepper",
-        "100g Mushrooms"
+        "2 cups of chickpeas (250 g)",
+        "2 cloves of garlic",
+        "2 lemons",
+        "1/2 cup of tahini (90-100 ml)",
+        "1/2 teaspoon of olive oil",
+        "1 teaspoon cumin",
+        "1.5 teaspoons of salt"
       ],
-      "method": "1. Pre-heat the oven to 200C/3C/gas 5. Add the pasata, green pepper and mushrooms to the base. Place the lid on the oven and cook for 30 minutes. 5. Serve with a slaw of your choice",
+      "method": "Mix tahini, olive oil, cumin and salt in a bowl. Add the juice of the lemons as well. Finally, finely chop the garlic, add them and mix well.Blend with the tahini mixture you prepared in the food processor until you get a smooth consistency. If the food processor is struggling, add olive oil or water little by little to reach the desired consistency.",
       "cookingTime": "35 minutes"
     },
     {
@@ -34,19 +40,23 @@
         "Tomatoes",
         "Olive Oil"
       ],
-      "method": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse minima ex rem quis similique eum ratione quaerat, voluptas molestias ut repudiandae delectus voluptates. Eius esse at tenetur ab accusamus excepturi?",
-      "cookingTime": "35 minutes"
+      "method": "Chop cheese, onions and tomatoes. mix all the ingredients. It's that simple.",
+      "cookingTime": "15 minutes"
     },
     {
-      "title": "carrot tarator",
+      "id": "4",
+      "title": "Carrot Tarator",
       "ingredients": [
-        "djadja",
-        "dadbashd",
-        "adsas"
+        "2 carrots",
+        "5 tablespoons of yogurt",
+        "3 tablespoons of strained yogurt",
+        "1 clove of grated garlic",
+        "2 tablespoons of olive oil",
+        "6 walnut kernels",
+        "1 teaspoon of salt"
       ],
-      "method": "şöylene f",
-      "cookingTime": "455 minutes",
-      "id": "mu0-1F-"
+      "method": "Grate the carrot and put it in a pan. Fry it with a little olive oil for 2-3 minutes on medium heat, until soft, and set aside to cool.Take yoghurt, strained yoghurt, cooled grated carrot, walnut kernels, olive oil, grated garlic and salt in a bowl and mix well. That's all.",
+      "cookingTime": "15 minutes"
     }
   ]
 }

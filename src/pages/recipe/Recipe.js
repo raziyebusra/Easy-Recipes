@@ -1,14 +1,37 @@
+import {db} from '../../firebase/config'
+import { doc, getDoc } from 'firebase/firestore'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { useFetch } from '../../hooks/useFetch'
 import {useTheme} from '../../hooks/useTheme'
 // styles
 import './Recipe.css'
+import { getRoles } from '@testing-library/react'
 
 export default function Recipe() {
-  const { id } = useParams()
-  const url = 'http://localhost:3000/recipes/' + id
-  const { error, isPending, data: recipe } = useFetch(url)
   const { mode } = useTheme()
+
+  const [recipe, setRecipe] = useState(null)
+  const [isPending, setIsPending] = useState(false)
+  const [error, setError] = useState(false)
+  const { id } = useParams()
+
+
+  useEffect( () => {
+    setIsPending(true)
+    
+    const getRecipe = async () => {
+      const recipeRef = doc(db, "recipes", id);
+      const rec = await getDoc(recipeRef);
+      if (rec.empty) {
+        setError("Could not find that recipe");
+        setIsPending(false);
+      } else {
+        setRecipe(rec.data());
+        setIsPending(false);
+      }
+    }
+    getRecipe()
+  }, [id])
 
   return (
     <div className={`recipe ${mode}`}>
@@ -21,7 +44,7 @@ export default function Recipe() {
           <ul>
             {recipe.ingredients.map(ing => <li key={ing}>{ing}</li>)}
           </ul>
-          <p className="method">{recipe.method}</p>
+      o    <p className="method">{recipe.method}</p>
         </>
       )}
     </div>

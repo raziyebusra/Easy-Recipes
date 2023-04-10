@@ -20,8 +20,8 @@ export default function Recipe() {
     setIsPending(true)
     
     const getRecipe = async () => {
-      const recipeRef = doc(db, "recipes", id);
-      const rec = await getDoc(recipeRef);
+      const ref = doc(db, "recipes", id);
+      const rec = await getDoc(ref);
       if (rec.empty) {
         setError("Could not find that recipe");
         setIsPending(false);

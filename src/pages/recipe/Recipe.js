@@ -1,11 +1,11 @@
 import {db} from '../../firebase/config'
-import { doc, getDoc } from 'firebase/firestore'
+import { doc, getDoc, updateDoc } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import {useTheme} from '../../hooks/useTheme'
 // styles
 import './Recipe.css'
-import { getRoles } from '@testing-library/react'
+//import { getRoles } from '@testing-library/react'
 
 export default function Recipe() {
   const { mode } = useTheme()
@@ -15,11 +15,17 @@ export default function Recipe() {
   const [error, setError] = useState(false)
   const { id } = useParams()
 
-
   useEffect( () => {
     setIsPending(true)
     
-    const getRecipe = async () => {
+    let ref = collection(db, id)
+
+    const unsub = onSnapshot(ref, (snapshot) => {
+
+    })
+
+
+    const getRecipe = () => {
       const ref = doc(db, "recipes", id);
       const rec = await getDoc(ref);
       if (rec.empty) {
@@ -32,6 +38,24 @@ export default function Recipe() {
     }
     getRecipe()
   }, [id])
+  return{ documents }
+
+  //updating document-- aşağısı olmadı :/
+
+  const handleClick = () => {
+    const docRef = doc(db, 'recipes', id)
+    
+    updateDoc(docRef, {
+      title: 'Something completely different'
+    })
+    .then(docRef => {
+      console.log("title has changed")
+    })
+    .catch(error => {
+      console.log(error)
+    })
+  }
+      
 
   return (
     <div className={`recipe ${mode}`}>
@@ -44,7 +68,8 @@ export default function Recipe() {
           <ul>
             {recipe.ingredients.map(ing => <li key={ing}>{ing}</li>)}
           </ul>
-      o    <p className="method">{recipe.method}</p>
+          <p className="method">{recipe.method}</p>
+          <button onClick={handleClick}>Update</button>
         </>
       )}
     </div>
